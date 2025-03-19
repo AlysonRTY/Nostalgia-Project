@@ -1,7 +1,7 @@
 export interface CardT {
   name: string;
-  imageUrl?: string;
-  power?: number;
+  image?: string;
+  // power?: number;
   id?: string;
 }
 

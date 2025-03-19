@@ -1,0 +1,304 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Cristiano Ronaldo",
+      "image": "/pictures/ronaldo.jpg",
+      "rating": 94,
+      "position": "LW",
+      "club": "Real Madrid",
+      "nation": "Portugal",
+      "league": "La Liga"
+    },
+    {
+      "id": 2,
+      "name": "Lionel Messi",
+      "image": "/pictures/messi.jpg",
+      "rating": 93,
+      "position": "RW",
+      "club": "FC Barcelona",
+      "nation": "Argentina",
+      "league": "La Liga"
+    },
+    {
+      "id": 3,
+      "name": "Neymar Jr",
+      "image": "/pictures/neymar.jpg",
+      "rating": 92,
+      "position": "LW",
+      "club": "FC Barcelona",
+      "nation": "Brazil",
+      "league": "La Liga"
+    },
+    {
+      "id": 4,
+      "name": "Luis Suarez",
+      "image": "/pictures/suarez.jpg",
+      "rating": 92,
+      "position": "ST",
+      "club": "FC Barcelona",
+      "nation": "Uruguay",
+      "league": "La Liga"
+    },
+    {
+      "id": 5,
+      "name": "Manuel Neuer",
+      "image": "/pictures/neuer.jpg",
+      "rating": 92,
+      "position": "GK",
+      "club": "Bayern Munich",
+      "nation": "Germany",
+      "league": "Bundesliga"
+    },
+    {
+      "id": 6,
+      "name": "Gareth Bale",
+      "image": "/pictures/bale.jpg",
+      "rating": 90,
+      "position": "RW",
+      "club": "Real Madrid",
+      "nation": "Wales",
+      "league": "La Liga"
+    },
+    {
+      "id": 7,
+      "name": "Zlatan Ibrahimovic",
+      "image": "/pictures/ibrahimovic.jpg",
+      "rating": 90,
+      "position": "ST",
+      "club": "Manchester United",
+      "nation": "Sweden",
+      "league": "Premier League"
+    },
+    {
+      "id": 8,
+      "name": "Jérôme Boateng",
+      "image": "/pictures/boateng.jpg",
+      "rating": 90,
+      "position": "CB",
+      "club": "Bayern Munich",
+      "nation": "Germany",
+      "league": "Bundesliga"
+    },
+    {
+      "id": 9,
+      "name": "Robert Lewandowski",
+      "image": "/pictures/lewandowski.jpg",
+      "rating": 90,
+      "position": "ST",
+      "club": "Bayern Munich",
+      "nation": "Poland",
+      "league": "Bundesliga"
+    },
+    {
+      "id": 10,
+      "name": "David De Gea",
+      "image": "/pictures/degea.jpg",
+      "rating": 90,
+      "position": "GK",
+      "club": "Manchester United",
+      "nation": "Spain",
+      "league": "Premier League"
+    },
+    {
+      "id": 11,
+      "name": "Sergio Aguero",
+      "image": "/pictures/aguero.jpg",
+      "rating": 89,
+      "position": "ST",
+      "club": "Manchester City",
+      "nation": "Argentina",
+      "league": "Premier League"
+    },
+    {
+      "id": 12,
+      "name": "Mesut Özil",
+      "image": "/pictures/ozil.jpg",
+      "rating": 89,
+      "position": "CAM",
+      "club": "Arsenal",
+      "nation": "Germany",
+      "league": "Premier League"
+    },
+    {
+      "id": 13,
+      "name": "Thibaut Courtois",
+      "image": "/pictures/courtois.jpg",
+      "rating": 89,
+      "position": "GK",
+      "club": "Chelsea",
+      "nation": "Belgium",
+      "league": "Premier League"
+    },
+    {
+      "id": 14,
+      "name": "Sergio Ramos",
+      "image": "/pictures/ramos.jpg",
+      "rating": 89,
+      "position": "CB",
+      "club": "Real Madrid",
+      "nation": "Spain",
+      "league": "La Liga"
+    },
+    {
+      "id": 15,
+      "name": "Luka Modric",
+      "image": "/pictures/modric.jpg",
+      "rating": 89,
+      "position": "CM",
+      "club": "Real Madrid",
+      "nation": "Croatia",
+      "league": "La Liga"
+    },
+    {
+      "id": 16,
+      "name": "Thiago Silva",
+      "image": "/pictures/silva.jpg",
+      "rating": 88,
+      "position": "CB",
+      "club": "Paris Saint-Germain",
+      "nation": "Brazil",
+      "league": "Ligue 1"
+    },
+    {
+      "id": 17,
+      "name": "Antoine Griezmann",
+      "image": "/pictures/griezmann.jpg",
+      "rating": 88,
+      "position": "ST",
+      "club": "Atlético Madrid",
+      "nation": "France",
+      "league": "La Liga"
+    },
+    {
+      "id": 18,
+      "name": "Paul Pogba",
+      "image": "/pictures/pogba.jpg",
+      "rating": 88,
+      "position": "CM",
+      "club": "Manchester United",
+      "nation": "France",
+      "league": "Premier League"
+    },
+    {
+      "id": 19,
+      "name": "Gonzalo Higuain",
+      "image": "/pictures/higuain.jpg",
+      "rating": 88,
+      "position": "ST",
+      "club": "Juventus",
+      "nation": "Argentina",
+      "league": "Serie A"
+    },
+    {
+      "id": 20,
+      "name": "Pepe",
+      "image": "/pictures/pepe.jpg",
+      "rating": 88,
+      "position": "CB",
+      "club": "Real Madrid",
+      "nation": "Portugal",
+      "league": "La Liga"
+    },
+    {
+      "id": 21,
+      "name": "Kevin De Bruyne",
+      "image": "/pictures/debruyne.jpg",
+      "rating": 88,
+      "position": "CAM",
+      "club": "Manchester City",
+      "nation": "Belgium",
+      "league": "Premier League"
+    },
+    {
+      "id": 22,
+      "name": "Philipp Lahm",
+      "image": "/pictures/lahm.jpg",
+      "rating": 88,
+      "position": "RB",
+      "club": "Bayern Munich",
+      "nation": "Germany",
+      "league": "Bundesliga"
+    },
+    {
+      "id": 23,
+      "name": "Diego Godin",
+      "image": "/pictures/godin.jpg",
+      "rating": 88,
+      "position": "CB",
+      "club": "Atlético Madrid",
+      "nation": "Uruguay",
+      "league": "La Liga"
+    },
+    {
+      "id": 24,
+      "name": "Andres Iniesta",
+      "image": "/pictures/iniesta.jpg",
+      "rating": 88,
+      "position": "CM",
+      "club": "FC Barcelona",
+      "nation": "Spain",
+      "league": "La Liga"
+    },
+    {
+      "id": 25,
+      "name": "Marco Reus",
+      "image": "/pictures/reus.jpg",
+      "rating": 88,
+      "position": "LW",
+      "club": "Borussia Dortmund",
+      "nation": "Germany",
+      "league": "Bundesliga"
+    },
+    {
+      "id": 26,
+      "name": "Gianluigi Buffon",
+      "image": "/pictures/buffon.jpg",
+      "rating": 88,
+      "position": "GK",
+      "club": "Juventus",
+      "nation": "Italy",
+      "league": "Serie A"
+    },
+    {
+      "id": 27,
+      "name": "Toni Kroos",
+      "image": "/pictures/kroos.jpg",
+      "rating": 88,
+      "position": "CM",
+      "club": "Real Madrid",
+      "nation": "Germany",
+      "league": "La Liga"
+    },
+    {
+      "id": 28,
+      "name": "Petr Čech",
+      "image": "/pictures/cech.jpg",
+      "rating": 88,
+      "position": "GK",
+      "club": "Arsenal",
+      "nation": "Czech Republic",
+      "league": "Premier League"
+    },
+    {
+      "id": 29,
+      "name": "Giorgio Chiellini",
+      "image": "/pictures/chiellini.jpg",
+      "rating": 88,
+      "position": "CB",
+      "club": "Juventus",
+      "nation": "Italy",
+      "league": "Serie A"
+    },
+    {
+      "id": 30,
+      "name": "Eden Hazard",
+      "image": "/pictures/hazard.jpg",
+      "rating": 88,
+      "position": "LW",
+      "club": "Chelsea",
+      "nation": "Belgium",
+      "league": "Premier League"
+    }
+  ]
+}

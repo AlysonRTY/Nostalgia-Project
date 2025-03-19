@@ -4,8 +4,7 @@ const Card = (props: CardT) => {
   return (
     <div className="card">
       <h2>{props.name}</h2>
-      <p>Power: {props.power}</p>
-      {props.imageUrl && <img src={props.imageUrl} alt={props.name} />}
+      {props.image && <img src={props.image} alt={props.name} />}
     </div>
   );
 };

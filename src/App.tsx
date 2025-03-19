@@ -9,11 +9,11 @@ function App() {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const req = await fetch('https://api.magicthegathering.io/v1/cards');
+        const req = await fetch('/data/players.json');
         const res = await req.json();
         console.log(res);
 
-        const data = res.cards as CardsT;
+        const data = res.players as CardsT;
         console.log(data);
 
         setCards(data);
@@ -21,19 +21,19 @@ function App() {
         console.error('Error fetching cards:', error);
       }
     };
-
+ 
     fetchCards();
   }, []);
 
   return (
     <>
-      <h1>Magic: The Gathering Cards</h1>
+      <h1>The Best</h1>
       {cards.map((card) => (
         <Card
           key={card.id}
           name={card.name}
-          // imageUrl={card.imageUrl}
-          power={card.power || 0}
+          image={card.image}
+          // power={card.power || 0}
         />
       ))}
     </>
