@@ -29,12 +29,13 @@ function App() {
 
   return (
     <>
-      <h1>The Best</h1>
+      <h1>The Best 30</h1>
       {players.map((player) => (
         <Player
           key={player.id}
           name={player.name}
           image={player.image}
+          desc={player.desc}
         />
       ))}
     </>

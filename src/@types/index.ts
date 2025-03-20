@@ -1,7 +1,7 @@
 export interface PlayerT {
   name: string;
   image?: string;
-  // power?: number;
+  desc: string;
   id?: string;
 }
 
