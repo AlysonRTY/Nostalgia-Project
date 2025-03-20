@@ -1,39 +1,40 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Card from './components/Cards';
-import { CardsT } from './@types';
+import Player from './components/Players.tsx';
+import { PlayersT } from './@types';
 
 function App() {
-  const [cards, setCards] = useState<CardsT>([]);
+  const [players, setPlayers] = useState<PlayersT>([]);
 
   useEffect(() => {
-    const fetchCards = async () => {
+    const fetchPlayers = async () => {
       try {
         const req = await fetch('/data/players.json');
         const res = await req.json();
         console.log(res);
 
-        const data = res.players as CardsT;
+        const data = res.players as PlayersT;
         console.log(data);
 
-        setCards(data);
+       const reversedData = data.reverse();
+
+      setPlayers(reversedData);
       } catch (error) {
-        console.error('Error fetching cards:', error);
+        console.error('Error fetching players:', error);
       }
     };
  
-    fetchCards();
+    fetchPlayers();
   }, []);
 
   return (
     <>
       <h1>The Best</h1>
-      {cards.map((card) => (
-        <Card
-          key={card.id}
-          name={card.name}
-          image={card.image}
-          // power={card.power || 0}
+      {players.map((player) => (
+        <Player
+          key={player.id}
+          name={player.name}
+          image={player.image}
         />
       ))}
     </>

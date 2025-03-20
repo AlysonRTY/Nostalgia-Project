@@ -1,12 +1,12 @@
-import { CardT } from '../@types';
+import { PlayerT } from '../@types';
 
-const Card = (props: CardT) => {
+const Player = (props: PlayerT) => {
   return (
-    <div className="card">
+    <div className="player">
       <h2>{props.name}</h2>
       {props.image && <img src={props.image} alt={props.name} />}
     </div>
   );
 };
 
-export default Card;
+export default Player;
