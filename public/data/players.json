@@ -15,7 +15,7 @@
       "id": 2,
       "name": "Lionel Messi",
       "image": "/pictures/messi.jpg",
-      "desc": "The magician of Barcelona, Lionel Messi is a close second to Ronaldo with a 93 overall rating. With 96 Dribbling, Messi can weave through defenses like they're standing still. His 88 Passing and 89 Shooting make him a complete attacking threat. While he may not have Ronaldo's physical dominance, Messi's agility and creativity are unmatched. He's the player who can turn a game on its head with a single moment of brilliance.",
+      "desc": "The magician of Barcelona, Lionel Messi is a close second to Ronaldo with a 93 overall rating. With 96 Dribbling, Messi can weave through defenses like they're standing still. His 86 Passing and 90 Shooting make him a complete attacking threat. While he may not have Ronaldo's physical dominance, Messi's agility and creativity are unmatched. He's the player who can turn a game on its head with a single moment of brilliance.",
       "rating": 93,
       "position": "RW",
       "club": "FC Barcelona",
@@ -270,7 +270,7 @@
       "image": "/pictures/reus.jpg",
       "desc": "The German speedster, Marco Reus, is one of the most exciting wingers in FIFA 17. With 90 Pace and 86 Dribbling, Reus is a constant threat on the left wing. His ability to sprint past defenders and deliver deadly crosses makes him a key player for Borussia Dortmund. While he may not have Ronaldo's all-around brilliance, Reus's speed and skill make him one of the most dangerous wingers in the game.",
       "rating": 88,
-      "position": "LW",
+      "position": "LM",
       "club": "Borussia Dortmund",
       "nation": "Germany",
       "league": "Bundesliga"
@@ -325,7 +325,7 @@
       "image": "/pictures/hazard.jpg",
       "desc": "The Belgian magician, Eden Hazard, is one of the most electrifying players in FIFA 17. With an 88 overall rating, 90 Pace, and 91 Dribbling, Hazard is a nightmare for defenders on the left wing. His ability to glide past opponents and create chances out of nothing makes him a key player for Chelsea. While he may not have Ronaldo's all-around dominance, Hazard's flair and creativity are a joy to watch.",
       "rating": 88,
-      "position": "LW",
+      "position": "LM",
       "club": "Chelsea",
       "nation": "Belgium",
       "league": "Premier League"
