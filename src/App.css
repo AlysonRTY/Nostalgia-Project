@@ -7,14 +7,6 @@
   text-align: center;
 } */
 
-/* Smooth transitions for fade effect */
-.transition-opacity {
-  transition: opacity 1s ease-in-out;
-}
-
-.transition-transform {
-  transition: transform 1s ease-in-out;
-}
 @layer components {
   .bg-divider-image {
     background-image: url("./divider.jpg");
