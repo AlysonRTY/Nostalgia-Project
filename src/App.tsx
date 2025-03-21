@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css'; // Ensure this file contains the custom Tailwind class
+import './App.css';
 import Player from './components/Players.tsx';
 import FadeIn from './components/FadeIn.tsx';
 import { PlayersT } from './@types';
