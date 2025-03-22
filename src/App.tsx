@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import PlayerList from './components/PlayerList'; // Import the new component
+import PlayerList from './components/PlayerList';
 import DividerSection from './components/DividerSection';
 import ToTopBtn from './components/ToTopBtn';
 import { PlayersT } from './@types';
+import { TypeAnimation } from 'react-type-animation';
+
 
 function App() {
   const [players, setPlayers] = useState<PlayersT>([]);
@@ -50,7 +52,13 @@ function App() {
 
       <div className="p-4 bg-gray-100 min-h-screen flex flex-col items-center">
         <div className="w-full max-w-4xl">
-          <h1 className="text-4xl font-bold text-center mb-8">The Best 30</h1>
+          <h1 className="text-4xl font-bold text-center mb-8">
+  <TypeAnimation
+    sequence={['The Best 30', 1000, 'The Greatest Players', 1000]}
+    speed={30}
+    repeat={Infinity}
+  />
+</h1>
 
           {/* Segment 30-21 */}
           <div className="mb-12">

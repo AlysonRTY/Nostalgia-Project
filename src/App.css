@@ -28,3 +28,22 @@
 .animate-pulse-slow {
   animation: pulse-slow 3s ease-in-out infinite;
 }
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.scroll-to-top-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #cbd5e1;
+  animation: bounce 1s infinite;
+}

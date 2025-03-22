@@ -16,7 +16,8 @@ const DividerSection = ({ text, isBold = false, onClick }: DividerSectionProps) 
         <div className="flex justify-center w-full pb-8">
           <button
             onClick={onClick}
-            className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors">
+            className="scroll-to-top-btn bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+          >
             Go to Top ↑
           </button>
         </div>
