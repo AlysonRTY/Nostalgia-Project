@@ -105,7 +105,7 @@ function App() {
         </div>
 
         {/* "Go to Top" Button */}
-        <ToTopBtn onClick={scrollToTop} />
+        <ToTopBtn onClick={scrollToTop} aria-label="Scroll to top" />
       </div>
     </>
   );
