@@ -33,7 +33,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
       <div className="w-full max-w-sm">
-        {/* FIFA-style header */}
+        {/* header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">FIFA 17</h2>
           <p className="text-blue-400">Sign in to your Ultimate Team</p>
