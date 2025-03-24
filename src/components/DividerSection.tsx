@@ -2,15 +2,14 @@ import FadeIn from './FadeIn';
 
 interface DividerSectionProps {
   text: string;
-  isBold?: boolean;
   onClick: () => void;
 }
 
-const DividerSection = ({ text, isBold = false, onClick }: DividerSectionProps) => {
+const DividerSection = ({ text, onClick }: DividerSectionProps) => {
   return (
     <div className="flex flex-col items-center justify-end mb-12 h-96 rounded-lg relative bg-divider-image">
       <FadeIn>
-        <p className={`text-xl text-center mb-4 text-white ${isBold ? 'font-bold' : ''}`}>
+        <p className="text-xl text-center mb-4 text-white">
           {text}
         </p>
         <div className="flex justify-center w-full pb-8">

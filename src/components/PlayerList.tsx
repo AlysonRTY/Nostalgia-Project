@@ -1,5 +1,5 @@
-import Player from './Players';
-import { PlayersT } from '../@types';
+import Player from "./Players";
+import { PlayersT } from "../@types";
 
 interface PlayerListProps {
   players: PlayersT;
@@ -8,7 +8,12 @@ interface PlayerListProps {
   isTop3?: boolean;
 }
 
-const PlayerList = ({ players, start, end, isTop3 = false }: PlayerListProps) => {
+const PlayerList = ({
+  players,
+  start,
+  end,
+  isTop3 = false,
+}: PlayerListProps) => {
   return (
     <>
       {players.slice(start, end).map((player) => (

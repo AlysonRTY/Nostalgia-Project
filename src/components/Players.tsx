@@ -13,8 +13,8 @@ const Player = (props: PlayerT & { isTop3?: boolean; rank?: number }) => {
       <div
         className={`absolute inset-0 z-0 animate-pulse-slow ${
           props.isTop3
-            ? 'bg-gradient-to-r from-yellow-500 via-neutral-200 to-yellow-300' // More intense gold gradient for top 3
-            : 'bg-gradient-to-r from-zinc-800 via-yellow-300 to-zinc-800' // Dark gradient with slight touch gold for normal players
+            ? 'bg-gradient-to-r from-yellow-500 via-neutral-200 to-yellow-300' 
+            : 'bg-gradient-to-r from-zinc-800 via-yellow-300 to-zinc-800' 
         } opacity-10`}
       ></div>
 
