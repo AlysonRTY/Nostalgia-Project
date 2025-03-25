@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "Cristiano Ronaldo",
+      "position": "LW",
       "image": "/pictures/ronaldo.jpg",
       "weak_foot": 4,
       "skill_moves": 5,
@@ -22,6 +23,7 @@
     {
       "id": 2,
       "name": "Lionel Messi",
+      "position": "RW",
       "image": "/pictures/messi.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -41,6 +43,7 @@
     {
       "id": 3,
       "name": "Neymar Jr",
+      "position": "LW",
       "image": "/pictures/neymar.jpg",
       "weak_foot": 5,
       "skill_moves": 5,
@@ -60,6 +63,7 @@
     {
       "id": 4,
       "name": "Luis Suarez",
+      "position": "ST",
       "image": "/pictures/suarez.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -79,6 +83,7 @@
     {
       "id": 5,
       "name": "Manuel Neuer",
+      "position": "GK",
       "image": "/pictures/neuer.jpg",
       "weak_foot": 4,
       "skill_moves": 1,
@@ -98,6 +103,7 @@
     {
       "id": 6,
       "name": "Gareth Bale",
+      "position": "RW",
       "image": "/pictures/bale.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -117,6 +123,7 @@
     {
       "id": 7,
       "name": "Zlatan Ibrahimovic",
+      "position": "ST",
       "image": "/pictures/ibrahimovic.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -133,9 +140,10 @@
         "physical": 86
       }
     },
-        {
+    {
       "id": 8,
       "name": "Jérôme Boateng",
+      "position": "CB",
       "image": "/pictures/boateng.jpg",
       "weak_foot": 4,
       "skill_moves": 2,
@@ -155,6 +163,7 @@
     {
       "id": 9,
       "name": "Robert Lewandowski",
+      "position": "ST",
       "image": "/pictures/lewandowski.jpg",
       "weak_foot": 4,
       "skill_moves": 3,
@@ -174,6 +183,7 @@
     {
       "id": 10,
       "name": "David De Gea",
+      "position": "GK",
       "image": "/pictures/degea.jpg",
       "weak_foot": 3,
       "skill_moves": 1,
@@ -181,7 +191,7 @@
       "height": 192,
       "weight": 82,
       "work_rate": "Medium/Medium",
-         "stats": {
+      "stats": {
         "diving": 88,
         "handling": 85,
         "kicking": 87,
@@ -190,9 +200,10 @@
         "positioning": 85
       }
     },
-        {
+    {
       "id": 11,
       "name": "Sergio Aguero",
+      "position": "ST",
       "image": "/pictures/aguero.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -209,9 +220,10 @@
         "physical": 70
       }
     },
-        {
+    {
       "id": 12,
       "name": "Mesut Özil",
+      "position": "CAM",
       "image": "/pictures/ozil.jpg",
       "weak_foot": 2,
       "skill_moves": 4,
@@ -228,9 +240,10 @@
         "physical": 58
       }
     },
-        {
+    {
       "id": 13,
       "name": "Thibaut Courtois",
+      "position": "GK",
       "image": "/pictures/courtois.jpg",
       "weak_foot": 3,
       "skill_moves": 1,
@@ -238,7 +251,7 @@
       "height": 199,
       "weight": 96,
       "work_rate": "Medium/Medium",
-        "stats": {
+      "stats": {
         "diving": 84,
         "handling": 91,
         "kicking": 69,
@@ -250,6 +263,7 @@
     {
       "id": 14,
       "name": "Sergio Ramos",
+      "position": "CB",
       "image": "/pictures/ramos.jpg",
       "weak_foot": 3,
       "skill_moves": 3,
@@ -266,9 +280,10 @@
         "physical": 83
       }
     },
-       {
+    {
       "id": 15,
       "name": "Luka Modric",
+      "position": "CM",
       "image": "/pictures/modric.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -285,9 +300,10 @@
         "physical": 66
       }
     },
-        {
+    {
       "id": 16,
       "name": "Thiago Silva",
+      "position": "CB",
       "image": "/pictures/silva.jpg",
       "weak_foot": 3,
       "skill_moves": 3,
@@ -304,9 +320,10 @@
         "physical": 79
       }
     },
-      {
+    {
       "id": 17,
       "name": "Antoine Griezmann",
+      "position": "ST",
       "image": "/pictures/griezmann.jpg",
       "weak_foot": 3,
       "skill_moves": 4,
@@ -323,9 +340,10 @@
         "physical": 67
       }
     },
-        {
+    {
       "id": 18,
       "name": "Paul Pogba",
+      "position": "CM",
       "image": "/pictures/pogba.jpg",
       "weak_foot": 4,
       "skill_moves": 5,
@@ -342,9 +360,10 @@
         "physical": 87
       }
     },
-            {
+    {
       "id": 19,
       "name": "Gonzalo Higuain",
+      "position": "ST",
       "image": "/pictures/higuain.jpg",
       "weak_foot": 4,
       "skill_moves": 3,
@@ -361,9 +380,10 @@
         "physical": 75
       }
     },
-        {
+    {
       "id": 20,
       "name": "Pepe",
+      "position": "CB",
       "image": "/pictures/pepe.jpg",
       "weak_foot": 3,
       "skill_moves": 2,
@@ -380,9 +400,10 @@
         "physical": 81
       }
     },
-        {
+    {
       "id": 21,
       "name": "Kevin De Bruyne",
+      "position": "CAM",
       "image": "/pictures/debruyne.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -399,9 +420,10 @@
         "physical": 75
       }
     },
-        {
+    {
       "id": 22,
       "name": "Philipp Lahm",
+      "position": "RB",
       "image": "/pictures/lahm.jpg",
       "weak_foot": 3,
       "skill_moves": 3,
@@ -418,9 +440,10 @@
         "physical": 64
       }
     },
-        {
+    {
       "id": 23,
       "name": "Diego Godin",
+      "position": "CB",
       "image": "/pictures/godin.jpg",
       "weak_foot": 3,
       "skill_moves": 2,
@@ -437,9 +460,10 @@
         "physical": 79
       }
     },
-       {
+    {
       "id": 24,
       "name": "Andres Iniesta",
+      "position": "CM",
       "image": "/pictures/iniesta.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -456,9 +480,10 @@
         "physical": 60
       }
     },
-        {
+    {
       "id": 25,
       "name": "Marco Reus",
+      "position": "LM",
       "image": "/pictures/reus.jpg",
       "weak_foot": 4,
       "skill_moves": 4,
@@ -466,7 +491,7 @@
       "height": 180,
       "weight": 71,
       "work_rate": "Medium/Medium",
-       "stats": {
+      "stats": {
         "pace": 90,
         "shooting": 85,
         "passing": 84,
@@ -475,9 +500,10 @@
         "physical": 63
       }
     },
-        {
+    {
       "id": 26,
       "name": "Gianluigi Buffon",
+      "position": "GK",
       "image": "/pictures/buffon.jpg",
       "weak_foot": 2,
       "skill_moves": 1,
@@ -494,9 +520,10 @@
         "positioning": 90
       }
     },
-        {
+    {
       "id": 27,
       "name": "Toni Kroos",
+      "position": "CM",
       "image": "/pictures/kroos.jpg",
       "weak_foot": 5,
       "skill_moves": 3,
@@ -513,9 +540,10 @@
         "physical": 70
       }
     },
-        {
+    {
       "id": 28,
       "name": "Petr Čech",
+      "position": "GK",
       "image": "/pictures/cech.jpg",
       "weak_foot": 3,
       "skill_moves": 1,
@@ -523,7 +551,7 @@
       "height": 196,
       "weight": 90,
       "work_rate": "Medium/Medium",
-        "stats": {
+      "stats": {
         "diving": 83,
         "handling": 90,
         "kicking": 77,
@@ -532,9 +560,10 @@
         "positioning": 85
       }
     },
-        {
+    {
       "id": 29,
       "name": "Giorgio Chiellini",
+      "position": "CB",
       "image": "/pictures/chiellini.jpg",
       "weak_foot": 2,
       "skill_moves": 2,
@@ -544,7 +573,7 @@
       "work_rate": "Low/High",
       "stats": {
         "pace": 74,
-        "shooting":46,
+        "shooting": 46,
         "passing": 53,
         "dribbling": 58,
         "defending": 90,
@@ -554,6 +583,7 @@
     {
       "id": 30,
       "name": "Eden Hazard",
+      "position": "LM",
       "image": "/pictures/hazard.jpg",
       "weak_foot": 4,
       "skill_moves": 4,

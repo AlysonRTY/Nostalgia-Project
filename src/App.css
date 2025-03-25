@@ -9,7 +9,7 @@
 
 @layer components {
   .bg-divider-image {
-    background-image: url("./divider.jpg");
+    background-image: url("./assets/divider.jpg");
     background-size: cover;
     background-position: center;
   }

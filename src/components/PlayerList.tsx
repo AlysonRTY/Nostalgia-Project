@@ -8,12 +8,7 @@ interface PlayerListProps {
   isTop3?: boolean;
 }
 
-const PlayerList = ({
-  players,
-  start,
-  end,
-  isTop3 = false,
-}: PlayerListProps) => {
+function PlayerList({ players, start, end, isTop3 = false }: PlayerListProps) {
   return (
     <>
       {players.slice(start, end).map((player) => (
@@ -26,6 +21,6 @@ const PlayerList = ({
       ))}
     </>
   );
-};
+}
 
 export default PlayerList;

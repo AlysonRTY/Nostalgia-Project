@@ -1,17 +1,15 @@
-import FadeIn from './FadeIn';
+import FadeIn from "./FadeIn";
 
 interface DividerSectionProps {
   text: string;
   onClick: () => void;
 }
 
-const DividerSection = ({ text, onClick }: DividerSectionProps) => {
+function DividerSection({ text, onClick }: DividerSectionProps) {
   return (
     <div className="flex flex-col items-center justify-end mb-12 h-96 rounded-lg relative bg-divider-image">
       <FadeIn>
-        <p className="text-xl text-center mb-4 text-white">
-          {text}
-        </p>
+        <p className="text-xl text-center mb-4 text-white">{text}</p>
         <div className="flex justify-center w-full pb-8">
           <button
             onClick={onClick}
@@ -23,6 +21,6 @@ const DividerSection = ({ text, onClick }: DividerSectionProps) => {
       </FadeIn>
     </div>
   );
-};
+}
 
 export default DividerSection;

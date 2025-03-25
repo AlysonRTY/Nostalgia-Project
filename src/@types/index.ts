@@ -19,6 +19,7 @@ export type PlayersT = PlayerT[];
 export interface PlayerD {
   id: number;
   name: string;
+  position: string;
   image: string;
   weak_foot: number;
   skill_moves: number;

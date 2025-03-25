@@ -5,7 +5,7 @@ interface FadeInProps {
   children: ReactNode;
 }
 
-const FadeIn = ({ children }: FadeInProps) => {
+function FadeIn({ children }: FadeInProps) {
   const [isVisible, setIsVisible] = useState(false);
   const { ref } = useInView({
     triggerOnce: true,
@@ -28,6 +28,6 @@ const FadeIn = ({ children }: FadeInProps) => {
       {children}
     </div>
   );
-};
+}
 
 export default FadeIn;
