@@ -1,20 +1,20 @@
-// Navbar.tsx
-import { Link, Outlet } from "react-router";
+import { Link } from "react-router";
 import fifa17Logo from "../assets/fifa17-logo.jpg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { AuthContext } from "../context/AuthContext";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    setIsScrolled(window.scrollY > 10);
   }, []);
 
   const navItems = [{ path: "/login", label: "Login" }];
+
+  const { login } = useContext(AuthContext);
 
   return (
     <>
@@ -49,14 +49,14 @@ function Navbar() {
               </Link>
             </div>
 
-            {/* Login Button */}
             <div className="hidden md:block">
-              <Link
-                to="/login"
-                className="px-4 py-2 rounded-md text-lg font-medium hover:text-blue-400 transition-colors"
+              <button
+                onClick={login}
+                className="px-4 py-2 rounded-md text-lg font-medium
+              hover:text-blue-400 transition-colors"
               >
                 Login
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -98,11 +98,7 @@ function Navbar() {
         )}
       </nav>
 
-      <div className="pt-20">
-        {" "}
-        {/* Changed from mt-16 md:mt-20 to pt-20 for consistent spacing */}
-        <Outlet />
-      </div>
+      <div className="pt-20"></div>
     </>
   );
 }

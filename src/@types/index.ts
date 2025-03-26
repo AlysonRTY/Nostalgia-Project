@@ -46,3 +46,9 @@ interface Stats {
 }
 
 export type PlayersD = PlayerD[];
+
+
+export type User = {
+  userName: string;
+  email: string;
+}
