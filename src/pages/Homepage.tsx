@@ -143,7 +143,7 @@ function Homepage() {
           <ToTopBtn onClick={scrollToTop} />
         </div>
       </div>
-      <h2>welcome {user?.userName}</h2>
+      <h2>welcome TO THE GOATS {user?.userName}</h2>
     </>
   );
 }
