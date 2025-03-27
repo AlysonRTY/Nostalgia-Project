@@ -47,8 +47,19 @@ interface Stats {
 
 export type PlayersD = PlayerD[];
 
+export type PlayerListDProps = {
+  players: PlayersD;
+}
+
 
 export type User = {
   userName: string;
   email: string;
+}
+
+ export type PlayerListProps = {
+  players: PlayersT;
+  start: number;
+  end: number;
+  isTop3?: boolean;
 }

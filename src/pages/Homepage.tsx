@@ -10,7 +10,7 @@ function Homepage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // andler that scrolls to top
+  // handler that scrolls to top
   const handleNavigation = (path: string) => {
     window.scrollTo(0, 0);
     setTimeout(() => navigate(path), 0);
@@ -84,7 +84,6 @@ function Homepage() {
             </div>
           </div>
 
-          {/* Scroll indicator - only shown on desktop */}
           <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg
               className="w-8 h-8 text-white"

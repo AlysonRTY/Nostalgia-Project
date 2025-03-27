@@ -7,14 +7,12 @@ import { AuthContext } from "../context/AuthContext";
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { login, user, logout } = useContext(AuthContext);
+  const navItems = [{ path: "/login", label: "Login" }];
 
   useEffect(() => {
     setIsScrolled(window.scrollY > 10);
   }, []);
-
-  const navItems = [{ path: "/login", label: "Login" }];
-
-  const { login, user, logout } = useContext(AuthContext);
 
   return (
     <>

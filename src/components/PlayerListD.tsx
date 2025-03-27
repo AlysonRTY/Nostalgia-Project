@@ -1,10 +1,6 @@
 import { useParams, Link, Navigate } from "react-router";
-import { PlayersD } from "../@types";
+import { PlayerListDProps } from "../@types";
 import { useEffect } from "react";
-
-interface PlayerListDProps {
-  players: PlayersD;
-}
 
 function PlayerListD({ players }: PlayerListDProps) {
   const { playerName } = useParams();
