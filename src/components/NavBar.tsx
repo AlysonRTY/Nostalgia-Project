@@ -14,7 +14,7 @@ function Navbar() {
 
   const navItems = [{ path: "/login", label: "Login" }];
 
-  const { login } = useContext(AuthContext);
+  const { login, user, logout } = useContext(AuthContext);
 
   return (
     <>
@@ -50,13 +50,23 @@ function Navbar() {
             </div>
 
             <div className="hidden md:block">
-              <button
-                onClick={login}
-                className="px-4 py-2 rounded-md text-lg font-medium
+              {user ? (
+                <button
+                  onClick={logout}
+                  className="px-4 py-2 rounded-md text-lg font-medium
               hover:text-blue-400 transition-colors"
-              >
-                Login
-              </button>
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  onClick={login}
+                  className="px-4 py-2 rounded-md text-lg font-medium
+              hover:text-blue-400 transition-colors"
+                >
+                  Login
+                </button>
+              )}
             </div>
 
             {/* Mobile Menu Button */}

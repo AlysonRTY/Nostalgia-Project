@@ -7,6 +7,7 @@ import Navbar from "./components/NavBar";
 import BestPlayers from "./pages/BestPlayers";
 import PlayerDetails from "./pages/PlayerDetails";
 import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -17,10 +18,21 @@ function App() {
           <Routes>
             {/* <Route element={<Navbar />} /> */}
             <Route index element={<Homepage />} />
-            <Route path="best-players" element={<BestPlayers />} />
+            <Route
+              path="best-players"
+              element={
+                <ProtectedRoute>
+                  <BestPlayers />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="player-details/:playerName"
-              element={<PlayerDetails />}
+              element={
+                <ProtectedRoute>
+                  <PlayerDetails />
+                </ProtectedRoute>
+              }
             />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<ErrorPage />} />

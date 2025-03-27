@@ -37,7 +37,7 @@ function Homepage() {
           </div>
 
           {/* Title - positioned lower on mobile */}
-          <div className="md:hidden relative z-10 pt-16 px-4 text-center">
+          <div className="md:hidden relative z-10 pt-20 px-4 text-center">
             <h1 className="text-4xl font-bold text-white">
               FIFA 17 Ultimate Team
             </h1>
@@ -46,8 +46,7 @@ function Homepage() {
             </p>
           </div>
 
-          {/* Centered content container - positioned with more space */}
-          <div className="relative z-10 h-full flex flex-col items-center justify-end pb-24 md:justify-center md:pb-0">
+          <div className="relative z-10 h-full flex flex-col items-center justify-center pb-0 md:justify-center md:pb-0">
             <div className="text-center px-4 w-full max-w-2xl">
               {/* Hidden on mobile, shown on desktop */}
               <div className="hidden md:block">
@@ -59,7 +58,7 @@ function Homepage() {
                 </p>
               </div>
 
-              <div className="bg-gray-800/90 p-4 md:p-6 rounded-lg border border-gray-700 backdrop-blur-sm mx-auto md:mt-0">
+              <div className="bg-gray-800/90 p-4 md:p-6 rounded-lg border border-gray-700 backdrop-blur-sm mx-auto md:mt-0 mt-10">
                 <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
                   Unlock the Best Players
                 </h2>
@@ -143,7 +142,6 @@ function Homepage() {
           <ToTopBtn onClick={scrollToTop} />
         </div>
       </div>
-      <h2>welcome TO THE GOATS {user?.userName}</h2>
     </>
   );
 }

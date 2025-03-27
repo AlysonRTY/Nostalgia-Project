@@ -5,6 +5,7 @@ import { User } from "../@types";
 type AuthContextType = {
   user: User | null;
   login: () => void;
+  logout: () => void;
 };
 
 // 6 define type for providers props
@@ -16,6 +17,9 @@ type AuthContextProviderProps = {
 const AuthContextInitValue: AuthContextType = {
   user: null,
   login: () => {
+    throw new Error("Context not initialized");
+  },
+  logout: () => {
     throw new Error("Context not initialized");
   },
 };
@@ -39,9 +43,12 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const login = () => {
     setUser(currentUser);
   };
+  const logout = () => {
+    setUser(null);
+  };
 
   return (
-    <AuthContext.Provider value={{ user, login }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
