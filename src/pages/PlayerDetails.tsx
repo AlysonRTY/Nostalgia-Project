@@ -12,7 +12,7 @@ function PlayerDetails() {
         const req = await fetch("/data/details.json");
         const res = await req.json();
         const data = res.players as PlayersD;
-        setPlayersD(data.reverse());
+        setPlayersD(data);
       } catch (error) {
         console.error("Error fetching players:", error);
       } finally {

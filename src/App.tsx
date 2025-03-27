@@ -8,6 +8,7 @@ import BestPlayers from "./pages/BestPlayers";
 import PlayerDetails from "./pages/PlayerDetails";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import LoginRequired from "./pages/LoginRequired";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            <Route path="loginrequired" element={<LoginRequired />} />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
