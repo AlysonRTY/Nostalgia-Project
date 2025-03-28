@@ -52,10 +52,7 @@ export type PlayerListDProps = {
 }
 
 
-export type User = {
-  userName: string;
-  email: string;
-}
+
 
  export type PlayerListProps = {
   players: PlayersT;

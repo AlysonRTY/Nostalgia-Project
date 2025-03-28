@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import fifa17Logo from "../assets/fifa17-logo.jpg";
 import { useState, useEffect, useContext } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -7,12 +7,22 @@ import { AuthContext } from "../context/AuthContext";
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { login, user, logout } = useContext(AuthContext);
-  const navItems = [{ path: "/login", label: "Login" }];
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsScrolled(window.scrollY > 10);
   }, []);
+
+  const handleLogout = async () => {
+    navigate("/");
+    setIsMobileMenuOpen(false);
+    try {
+      await logout();
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <>
@@ -50,20 +60,20 @@ function Navbar() {
             <div className="hidden md:block">
               {user ? (
                 <button
-                  onClick={logout}
+                  onClick={handleLogout}
                   className="px-4 py-2 rounded-md text-lg font-medium
               hover:text-blue-400 transition-colors"
                 >
                   Logout
                 </button>
               ) : (
-                <button
-                  onClick={login}
+                <Link
+                  to="/login"
                   className="px-4 py-2 rounded-md text-lg font-medium
               hover:text-blue-400 transition-colors"
                 >
                   Login
-                </button>
+                </Link>
               )}
             </div>
 
@@ -92,16 +102,22 @@ function Navbar() {
             >
               The Best
             </Link>
-            {navItems.map((item) => (
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="w-full text-left px-3 py-3 rounded-md text-base font-medium hover:bg-gray-600 transition-colors"
+              >
+                Logout
+              </button>
+            ) : (
               <Link
-                key={item.path}
-                to={item.path}
+                to="/login"
                 className="block px-3 py-3 rounded-md text-base font-medium hover:bg-gray-600 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                {item.label}
+                Login
               </Link>
-            ))}
+            )}
           </div>
         )}
       </nav>

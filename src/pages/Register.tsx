@@ -12,7 +12,6 @@ function Register() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    register(email, password);
 
     if (!email || !password) {
       setError("Please fill in all fields");
@@ -28,10 +27,15 @@ function Register() {
     setError("");
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      navigate("/");
+      const success = await register(email, password);
+
+      if (success) {
+        navigate("/"); // Redirect on successful registration
+      } else {
+        setError("Registration failed. Email might be already in use.");
+      }
     } catch (err) {
-      setError("Registration failed. Please try again.");
+      setError("An unexpected error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -48,8 +52,21 @@ function Register() {
 
         {/* Error message */}
         {error && (
-          <div className="bg-red-500/20 text-red-200 p-3 rounded-md mb-4 text-sm">
-            {error}
+          <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-md mb-4 text-sm flex items-start">
+            <svg
+              className="w-5 h-5 mr-2 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{error}</span>
           </div>
         )}
 
@@ -59,7 +76,10 @@ function Register() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError(""); // Clear error when typing
+              }}
               placeholder="Email"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -70,7 +90,10 @@ function Register() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError(""); // Clear error when typing
+              }}
               placeholder="Password (min. 6 characters)"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -81,7 +104,7 @@ function Register() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors flex justify-center items-center"
+            className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors flex justify-center items-center disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <span className="flex items-center">
@@ -119,4 +142,5 @@ function Register() {
     </div>
   );
 }
+
 export default Register;

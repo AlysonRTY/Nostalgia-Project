@@ -1,7 +1,9 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useContext } from "react";
 import { useNavigate, Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Login() {
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -20,11 +22,16 @@ export default function Login() {
     setError("");
 
     try {
-      // Simulate login request
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      navigate("/"); // Redirect on success
+      // Call the login function from AuthContext
+      const success = await login(email, password);
+
+      if (success) {
+        navigate("/"); // Redirect on success
+      } else {
+        setError("Invalid email or password");
+      }
     } catch (err) {
-      setError("Invalid credentials");
+      setError("An error occurred during login. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -39,10 +46,23 @@ export default function Login() {
           <p className="text-blue-400">Sign in to your Ultimate Team</p>
         </div>
 
-        {/* Error message */}
+        {/* Error message  */}
         {error && (
-          <div className="bg-red-500/20 text-red-200 p-3 rounded-md mb-4 text-sm">
-            {error}
+          <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-md mb-4 text-sm flex items-start">
+            <svg
+              className="w-5 h-5 mr-2 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span>{error}</span>
           </div>
         )}
 
@@ -52,7 +72,10 @@ export default function Login() {
             <input
               type="text"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError(""); // Clear error when user starts typing
+              }}
               placeholder="Email"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -63,7 +86,10 @@ export default function Login() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError(""); // Clear error when user starts typing
+              }}
               placeholder="Password"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -73,7 +99,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors flex justify-center items-center"
+            className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors flex justify-center items-center disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (
               <span className="flex items-center">
