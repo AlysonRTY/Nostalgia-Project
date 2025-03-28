@@ -1,10 +1,17 @@
 import { createContext, ReactNode, useState } from "react";
-import { User } from "../@types";
+import { app, auth } from "../lib/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  type User,
+} from "firebase/auth";
+console.log(auth);
 
 // 4 define type for the context
 type AuthContextType = {
   user: User | null;
-  login: () => void;
+  login: (email: string, password: string) => void;
+  register: (email: string, password: string) => void;
   logout: () => void;
 };
 
@@ -17,6 +24,9 @@ type AuthContextProviderProps = {
 const AuthContextInitValue: AuthContextType = {
   user: null,
   login: () => {
+    throw new Error("Context not initialized");
+  },
+  register: () => {
     throw new Error("Context not initialized");
   },
   logout: () => {
@@ -40,15 +50,43 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
   const [user, setUser] = useState<User | null>(null);
 
-  const login = () => {
-    setUser(currentUser);
+  const login = (email: string, password: string) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        setUser(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setUser(user);
+      });
   };
+
+  const register = (email: string, password: string) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        setUser(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error);
+        // ..
+      });
+  };
+
   const logout = () => {
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );

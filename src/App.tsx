@@ -9,6 +9,7 @@ import PlayerDetails from "./pages/PlayerDetails";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginRequired from "./pages/LoginRequired";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             />
             <Route path="loginrequired" element={<LoginRequired />} />
             <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </BrowserRouter>
