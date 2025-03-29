@@ -11,6 +11,8 @@ import {
 console.log(auth);
 // console.log(app);
 
+// need to seperate these
+
 // 4 define type for the context
 type AuthContextType = {
   user: User | null;
