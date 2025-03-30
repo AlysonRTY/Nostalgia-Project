@@ -12,6 +12,8 @@ console.log(auth);
 // console.log(app);
 
 // need to seperate these
+// maybe delte/replace fadeIn
+// when logout i on restricted content => to homepage instead of loginrequiredpage
 
 // 4 define type for the context
 type AuthContextType = {
