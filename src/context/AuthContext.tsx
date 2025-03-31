@@ -8,10 +8,10 @@ import {
   signInWithEmailAndPassword,
   type User,
 } from "firebase/auth";
+import { LoadingSpinner } from "../components/LoadingSpinner";
 console.log(auth);
 // console.log(app);
 
-// need to seperate these
 // maybe delte/replace fadeIn
 // when logout i on restricted content => to homepage instead of loginrequiredpage
 
@@ -109,7 +109,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 
   // Wait until auth state is loaded before rendering children
   if (loading) {
-    return <div>Loading...</div>; // custom loading component /add later
+    return <LoadingSpinner />;
   }
 
   return (

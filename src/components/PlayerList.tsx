@@ -1,10 +1,15 @@
 import Player from "./Players";
 import { PlayerListProps } from "../@types";
 
-function PlayerList({ players, isTop3 = false }: PlayerListProps) {
+function PlayerList({
+  players,
+  start = 0,
+  end,
+  isTop3 = false,
+}: PlayerListProps) {
   return (
     <>
-      {players.map((player) => (
+      {players.slice(start, end).map((player) => (
         <Player
           key={player.id}
           {...player}
