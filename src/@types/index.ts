@@ -1,3 +1,5 @@
+
+
 // for players.json
 export interface PlayerT {
   name: string;
@@ -59,4 +61,13 @@ export type PlayerListDProps = {
   start: number;
   end: number;
   isTop3?: boolean;
-}
+ }
+
+
+export type Comment = {
+ id: string;
+  text: string;
+  author: string;
+  date: string;
+  userId: string;
+};

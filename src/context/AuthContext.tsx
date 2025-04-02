@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { app, auth } from "../lib/firebase";
 import {
   browserLocalPersistence,
@@ -6,10 +12,11 @@ import {
   onAuthStateChanged,
   setPersistence,
   signInWithEmailAndPassword,
+  signOut,
   type User,
 } from "firebase/auth";
 import { LoadingSpinner } from "../components/LoadingSpinner";
-console.log(auth);
+// console.log(auth);
 // console.log(app);
 
 // maybe delte/replace fadeIn
@@ -54,15 +61,10 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const login = async (email: string, password: string): Promise<boolean> => {
+  const login = async (email: string, password: string) => {
     try {
       await setPersistence(auth, browserLocalPersistence);
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      setUser(userCredential.user);
+      await signInWithEmailAndPassword(auth, email, password);
       return true;
     } catch (error) {
       console.error("Login error:", error);
@@ -70,17 +72,9 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     }
   };
 
-  const register = async (
-    email: string,
-    password: string
-  ): Promise<boolean> => {
+  const register = async (email: string, password: string) => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      setUser(userCredential.user);
+      await createUserWithEmailAndPassword(auth, email, password);
       return true;
     } catch (error) {
       console.error("Registration error:", error);
@@ -88,33 +82,38 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
     }
   };
 
-  const logout = async (): Promise<void> => {
+  const logout = async () => {
     try {
-      await auth.signOut();
+      await signOut(auth);
       setUser(null);
     } catch (error) {
       console.error("Logout error:", error);
-      throw error;
     }
   };
 
+  // Handle auth state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
-      setLoading(false); // Set loading to false once auth state is determined
+      setLoading(false);
     });
-
-    return () => unsubscribe(); // Cleanup subscription on unmount
+    return unsubscribe; // Cleanup on unmount
   }, []);
 
-  // Wait until auth state is loaded before rendering children
-  if (loading) {
-    return <LoadingSpinner />;
-  }
+  if (loading) return <LoadingSpinner />;
 
   return (
     <AuthContext.Provider value={{ user, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );
+};
+export const useAuthContext = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error(
+      "useAuthContext must be used within an AuthContextProvider"
+    );
+  }
+  return context;
 };
