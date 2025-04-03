@@ -1,15 +1,20 @@
-import { useParams, Link, Navigate } from "react-router";
+import { useParams, Link, Navigate, useLocation } from "react-router";
 import { PlayerListDProps } from "../@types";
 import { useEffect } from "react";
 import { CommentsSection } from "../context/CommentsSection";
+import { ScrollController } from "./ScrollController";
 
 function PlayerListD({ players }: PlayerListDProps) {
   const { playerName } = useParams();
+  const location = useLocation();
   const player = players.find((p) => p.name === playerName);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [playerName]);
+    // Only scroll to top if this is a fresh navigation
+    if (!location.state?.scrollToPlayerId) {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [playerName, location.state]);
 
   if (!player) return <Navigate to="/not-found" replace />;
 
@@ -39,7 +44,7 @@ function PlayerListD({ players }: PlayerListDProps) {
       </div>
       <div className="w-full bg-gray-200 rounded-full h-2 md:h-2.5">
         <div
-          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 md:h-2.5 rounded-full"
+          className="bg-gradient-to-r from-red-500 to-green-600 h-2 md:h-2.5 rounded-full"
           style={{ width: `${value}%` }}
         />
       </div>
@@ -48,11 +53,18 @@ function PlayerListD({ players }: PlayerListDProps) {
 
   return (
     <div className="pt-16 md:pt-24 pb-4 md:pb-8 px-4 md:px-8 bg-gray-100 min-h-screen">
+      <ScrollController />
       <div className="max-w-6xl mx-auto">
         <Link
-          to="/best-players"
+          to={location.state?.from || "/best-players"}
+          state={{
+            scrollToPlayerId: location.state?.scrollToPlayerId,
+            preserveScroll: true,
+            from: location.pathname,
+          }}
           className="mb-4 md:mb-6 inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors text-sm md:text-base"
         >
+          {/* back button content */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 mr-2"

@@ -3,17 +3,51 @@ import { useNavigate, Link } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 function Register() {
-  const { register } = useContext(AuthContext);
+  const { register, checkUsernameAvailability } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [usernameAvailable, setUsernameAvailable] = useState<boolean | null>(
+    null
+  );
+  const [checkingUsername, setCheckingUsername] = useState(false);
   const navigate = useNavigate();
+
+  const handleCheckUsername = async () => {
+    if (!username) {
+      setUsernameAvailable(null);
+      return;
+    }
+
+    if (username.length < 3) {
+      setError("Username must be at least 3 characters");
+      setUsernameAvailable(false);
+      return;
+    }
+
+    setCheckingUsername(true);
+    try {
+      const isAvailable = await checkUsernameAvailability(username);
+      setUsernameAvailable(isAvailable);
+      if (!isAvailable) {
+        setError("Username is already taken");
+      } else {
+        setError("");
+      }
+    } catch (error) {
+      console.error("Error checking username:", error);
+      setError("Error checking username availability");
+    } finally {
+      setCheckingUsername(false);
+    }
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!email || !password) {
+    if (!email || !password || !username) {
       setError("Please fill in all fields");
       return;
     }
@@ -23,19 +57,31 @@ function Register() {
       return;
     }
 
+    if (username.length < 3) {
+      setError("Username must be at least 3 characters");
+      return;
+    }
+
+    if (usernameAvailable === false) {
+      setError("Username is not available");
+      return;
+    }
+
     setIsLoading(true);
     setError("");
 
     try {
-      const success = await register(email, password);
+      const success = await register(email, password, username);
 
       if (success) {
         navigate("/"); // Redirect on successful registration
       } else {
         setError("Registration failed. Email might be already in use.");
       }
-    } catch (err) {
-      setError("An unexpected error occurred. Please try again.");
+    } catch (err: any) {
+      setError(
+        err.message || "An unexpected error occurred. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -74,11 +120,39 @@ function Register() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <input
+              type="text"
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+                setError("");
+                setUsernameAvailable(null);
+              }}
+              onBlur={handleCheckUsername}
+              placeholder="Username"
+              className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+              minLength={3}
+            />
+            {username && (
+              <div className="mt-1 text-xs">
+                {checkingUsername ? (
+                  <span className="text-gray-400">Checking username...</span>
+                ) : usernameAvailable === true ? (
+                  <span className="text-green-400">Username available!</span>
+                ) : usernameAvailable === false ? (
+                  <span className="text-red-400">Username taken</span>
+                ) : null}
+              </div>
+            )}
+          </div>
+
+          <div>
+            <input
               type="email"
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-                setError(""); // Clear error when typing
+                setError("");
               }}
               placeholder="Email"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -92,7 +166,7 @@ function Register() {
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
-                setError(""); // Clear error when typing
+                setError("");
               }}
               placeholder="Password (min. 6 characters)"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -103,7 +177,7 @@ function Register() {
 
           <button
             type="submit"
-            disabled={isLoading}
+            disabled={isLoading || checkingUsername}
             className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-white font-medium transition-colors flex justify-center items-center disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isLoading ? (

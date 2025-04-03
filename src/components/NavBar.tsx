@@ -17,8 +17,8 @@ function Navbar() {
   const handleLogout = async () => {
     setIsMobileMenuOpen(false);
     try {
-      await logout(); // Wait for logout to complete
-      navigate("/"); // Then navigate
+      await logout();
+      navigate("/", { state: { fromLogout: true } });
     } catch (error) {
       console.error("Logout failed:", error);
     }

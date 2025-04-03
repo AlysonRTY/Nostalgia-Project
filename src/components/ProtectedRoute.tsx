@@ -1,6 +1,6 @@
-import { ReactNode, useContext } from "react";
+import { ReactNode, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Navigate } from "react-router";
+import { Navigate, useLocation } from "react-router";
 
 type ProtectedRouteProps = {
   children: ReactNode;
@@ -8,13 +8,20 @@ type ProtectedRouteProps = {
 
 function ProtectedRoute({ children }: ProtectedRouteProps) {
   const { user } = useContext(AuthContext);
+  const location = useLocation();
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-  const isUserLoggedIn = user ? true : false;
-  return (
-    <div>
-      {isUserLoggedIn ? children : <Navigate to="/loginrequired" replace />}
-    </div>
-  );
+  useEffect(() => {
+    if (location.state?.fromLogout) {
+      setIsLoggingOut(true);
+    }
+  }, [location]);
+
+  if (isLoggingOut) {
+    return <Navigate to="/" replace />;
+  }
+
+  return user ? children : <Navigate to="/loginrequired" replace />;
 }
 
 export default ProtectedRoute;

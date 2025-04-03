@@ -5,7 +5,7 @@ import ToTopBtn from "../components/ToTopBtn";
 
 function Homepage() {
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
+  const { user, userData } = useContext(AuthContext);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -97,7 +97,7 @@ function Homepage() {
             {user ? (
               <div className="bg-gray-800/90 p-8 rounded-lg border border-gray-700 backdrop-blur-sm">
                 <h1 className="text-5xl font-bold mb-6 text-white">
-                  Welcome back, {user.email}!
+                  Welcome back, {userData?.username || "User"}!
                 </h1>
                 <p className="text-2xl mb-8 text-blue-300">
                   Ready to explore the top 30 players of FIFA 17?

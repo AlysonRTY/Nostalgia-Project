@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LoginRequired from "./pages/LoginRequired";
 import Register from "./pages/Register";
 import { LoadingSpinner } from "./components/LoadingSpinner";
+import { ScrollController } from "./components/ScrollController";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <AuthContextProvider>
         <BrowserRouter>
           <Navbar />
+          <ScrollController />
           <Routes>
             {/* <Route element={<Navbar />} /> */}
             <Route index element={<Homepage />} />
