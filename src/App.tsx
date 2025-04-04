@@ -42,7 +42,7 @@ function App() {
             <Route path="loginrequired" element={<LoginRequired />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-            {/* <Route path="loading" element={<LoadingSpinner />} /> */}
+            <Route path="loading" element={<LoadingSpinner />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </BrowserRouter>
