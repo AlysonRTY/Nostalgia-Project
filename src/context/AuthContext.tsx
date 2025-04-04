@@ -5,7 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { app, auth, db } from "../lib/firebase";
+import { auth, db } from "../lib/firebase";
 import {
   browserLocalPersistence,
   createUserWithEmailAndPassword,
