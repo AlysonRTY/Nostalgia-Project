@@ -18,11 +18,9 @@ function Homepage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Hero Section */}
       <section className="relative h-screen overflow-hidden -mt-[1px]">
         {/* Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* Aspect ratio wrapper */}
           <div className="absolute top-1/2 left-1/2 w-[177.77vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
@@ -32,7 +30,6 @@ function Homepage() {
               allowFullScreen
             ></iframe>
           </div>
-          {/* Overlay */}
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
@@ -145,7 +142,7 @@ function Homepage() {
           </div>
         </div>
 
-        {/* Scroll indicator - Only show when not logged in  //// maybe delete */}
+        {/* Scroll indicator  //// maybe delete */}
         {/* {!user && (
           <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg

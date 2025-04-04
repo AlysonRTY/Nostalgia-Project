@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect, useState } from "react";
+import { ReactNode, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate, useLocation } from "react-router";
 
@@ -9,19 +9,23 @@ type ProtectedRouteProps = {
 function ProtectedRoute({ children }: ProtectedRouteProps) {
   const { user } = useContext(AuthContext);
   const location = useLocation();
-  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-  useEffect(() => {
-    if (location.state?.fromLogout) {
-      setIsLoggingOut(true);
-    }
-  }, [location]);
-
-  if (isLoggingOut) {
+  // If user is logging out
+  if (location.state?.fromLogout) {
     return <Navigate to="/" replace />;
   }
 
-  return user ? children : <Navigate to="/loginrequired" replace />;
+  if (!user) {
+    return (
+      <Navigate
+        to="/loginrequired"
+        replace
+        state={{ from: location.pathname }}
+      />
+    );
+  }
+
+  return children;
 }
 
 export default ProtectedRoute;

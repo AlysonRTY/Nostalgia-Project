@@ -18,7 +18,7 @@ function Navbar() {
     setIsMobileMenuOpen(false);
     try {
       await logout();
-      navigate("/", { state: { fromLogout: true } });
+      navigate("/");
     } catch (error) {
       console.error("Logout failed:", error);
     }

@@ -10,11 +10,10 @@ function PlayerListD({ players }: PlayerListDProps) {
   const player = players.find((p) => p.name === playerName);
 
   useEffect(() => {
-    // Only scroll to top if this is a fresh navigation
     if (!location.state?.scrollToPlayerId) {
       window.scrollTo({ top: 0, behavior: "instant" });
     }
-  }, [playerName, location.state]);
+  }, [playerName, location.state?.scrollToPlayerId]);
 
   if (!player) return <Navigate to="/not-found" replace />;
 
