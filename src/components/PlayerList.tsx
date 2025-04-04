@@ -13,7 +13,7 @@ function PlayerList({
   const location = useLocation();
 
   useEffect(() => {
-    const playerId = location.state.scrollToPlayerId;
+    const playerId = location.state?.scrollToPlayerId;
     if (playerId) {
       // Add a small delay to ensure the DOM is fully rendered
       const timer = setTimeout(() => {
