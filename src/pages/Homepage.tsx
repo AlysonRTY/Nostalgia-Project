@@ -38,7 +38,7 @@ function Homepage() {
           {user ? (
             <div className="bg-gray-800/90 p-6 rounded-lg border border-gray-700 backdrop-blur-sm w-full max-w-md">
               <h1 className="text-3xl font-bold text-white mb-4">
-                Welcome back, {user.email}!
+                Welcome back, {userData?.username || "User"}!
               </h1>
               <p className="text-lg text-blue-300 mb-6">
                 Ready to explore the top 30 players of FIFA 17?

@@ -31,6 +31,8 @@ function PlayerListD({ players }: PlayerListDProps) {
     { label: "Work Rates", value: player.work_rate },
   ];
 
+  // 2 components in 1 need to seperate
+
   const StatBar = ({ label, value = 0 }: { label: string; value?: number }) => (
     <div className="bg-white p-2 md:p-4 rounded shadow-xs md:shadow-sm">
       <div className="flex justify-between items-center mb-1 md:mb-2">
