@@ -14,7 +14,7 @@ Relive the glory days of FIFA 17 with this interactive player database featuring
 - High-quality player images and metadata
 
 ### 🔍 Advanced Comparison Tool
-- **Position-aware matching**: Compare field players with field players, GKs with GKs
+- **Position-aware matching**: Position based comparison constraints
 - **Visual stat showdown**: Side-by-side attribute bars with color-coded advantages
 - **Head-to-head metrics**: Clear indicators of who performs better in each category
 
