@@ -35,6 +35,4 @@ Relive the glory days of FIFA 17 with this interactive player database featuring
 | Category         | Technologies                         |
 |------------------|--------------------------------------|
 | Frontend         | React, TypeScript, Tailwind CSS      |
-| State Management | React Context API                    |
 | Backend          | Firebase (Auth, Firestore)           |
-| Routing          | React Router                         |
