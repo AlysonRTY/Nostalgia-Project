@@ -28,19 +28,28 @@ function BestPlayers() {
   };
 
   return (
-    <div className="p-14 bg-gray-100 min-h-screen flex flex-col items-center">
-      <div className="w-full max-w-4xl">
-        <h1 className="text-4xl font-bold text-center mb-8">
-          <TypeAnimation
-            sequence={["The Best 30", 1000, "The Greatest Players", 1000]}
-            speed={30}
-            repeat={Infinity}
-          />
-        </h1>
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">
+            <TypeAnimation
+              sequence={["The Best 30", 1000, "The Greatest Players", 1000]}
+              speed={30}
+              repeat={Infinity}
+              wrapper="span"
+            />
+          </h1>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Discover the top players in FIFA 17 ranked by their skills,
+            performance, and impact on the game.
+          </p>
+        </div>
 
         {/* Segment 30-21 */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Players 30-21</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-white border-b border-gray-700 pb-2">
+            Players 30-21
+          </h2>
           <PlayerList players={players.slice(0, 10)} startRank={30} />
         </div>
 
@@ -51,7 +60,9 @@ function BestPlayers() {
 
         {/* Segment 21-11 */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Players 21-11</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-white border-b border-gray-700 pb-2">
+            Players 21-11
+          </h2>
           <PlayerList players={players.slice(10, 20)} startRank={20} />
         </div>
 
@@ -62,7 +73,9 @@ function BestPlayers() {
 
         {/* Segment 10-4 */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Players 10-4</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-white border-b border-gray-700 pb-2">
+            Players 10-4
+          </h2>
           <PlayerList players={players.slice(20, 27)} startRank={10} />
         </div>
 
@@ -73,7 +86,9 @@ function BestPlayers() {
 
         {/* Segment Top 3 */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Top 3 Players</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-white border-b border-gray-700 pb-2">
+            Top 3 Players
+          </h2>
           <PlayerList players={players.slice(27, 30)} startRank={3} />
         </div>
       </div>

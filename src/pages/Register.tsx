@@ -74,7 +74,7 @@ function Register() {
       const success = await register(email, password, username);
 
       if (success) {
-        navigate("/"); // Redirect on successful registration
+        navigate("/");
       } else {
         setError("Registration failed. Email might be already in use.");
       }
@@ -90,13 +90,11 @@ function Register() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
       <div className="w-full max-w-sm">
-        {/* header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">FIFA 17</h2>
           <p className="text-blue-400">Create your Ultimate Team account</p>
         </div>
 
-        {/* Error message */}
         {error && (
           <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-md mb-4 text-sm flex items-start">
             <svg
@@ -116,7 +114,6 @@ function Register() {
           </div>
         )}
 
-        {/* Registration form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <input
@@ -205,7 +202,6 @@ function Register() {
           </button>
         </form>
 
-        {/* Footer links */}
         <div className="mt-6 text-center text-sm text-gray-400">
           <p className="mb-2">Already have an account?</p>
           <Link to="/login" className="text-blue-400 hover:text-blue-300">

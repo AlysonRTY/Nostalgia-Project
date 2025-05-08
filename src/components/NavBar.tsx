@@ -33,7 +33,6 @@ function Navbar() {
       >
         <div className="w-full border-b border-slate-700">
           <div className="container mx-auto px-4 flex justify-between items-center">
-            {/* Logo */}
             <Link
               to="/"
               className="flex items-center hover:opacity-90 transition-opacity w-32 md:w-40"
@@ -45,7 +44,6 @@ function Navbar() {
               />
             </Link>
 
-            {/* "The Best" Link */}
             <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
               <Link
                 to="/best-players"
@@ -77,7 +75,6 @@ function Navbar() {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden p-2 rounded-md text-gray-300 hover:text-white focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -92,7 +89,6 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-gray-700 px-4 py-2 space-y-2 border-t border-gray-600">
             <Link

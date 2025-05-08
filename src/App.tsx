@@ -11,7 +11,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LoginRequired from "./pages/LoginRequired";
 import Register from "./pages/Register";
 import { LoadingSpinner } from "./components/LoadingSpinner";
-import { ScrollController } from "./components/ScrollController";
+import ComparisonResults from "./components/ComparisonResults";
+import ComparisonPage from "./pages/ComparisonPage";
 
 function App() {
   return (
@@ -19,9 +20,7 @@ function App() {
       <AuthContextProvider>
         <BrowserRouter>
           <Navbar />
-          <ScrollController />
           <Routes>
-            {/* <Route element={<Navbar />} /> */}
             <Route index element={<Homepage />} />
             <Route
               path="best-players"
@@ -38,6 +37,11 @@ function App() {
                   <PlayerDetails />
                 </ProtectedRoute>
               }
+            />
+            <Route path="compare" element={<ComparisonPage />} />
+            <Route
+              path="compare/:playerVsPlayer"
+              element={<ComparisonResults />}
             />
             <Route path="loginrequired" element={<LoginRequired />} />
             <Route path="login" element={<Login />} />

@@ -22,11 +22,10 @@ export default function Login() {
     setError("");
 
     try {
-      // Call the login function from AuthContext
       const success = await login(email, password);
 
       if (success) {
-        navigate("/"); // Redirect on success
+        navigate("/");
       } else {
         setError("Invalid email or password");
       }
@@ -40,13 +39,11 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
       <div className="w-full max-w-sm">
-        {/* header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">FIFA 17</h2>
           <p className="text-blue-400">Sign in to your Ultimate Team</p>
         </div>
 
-        {/* Error message  */}
         {error && (
           <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-md mb-4 text-sm flex items-start">
             <svg
@@ -66,7 +63,6 @@ export default function Login() {
           </div>
         )}
 
-        {/* Login form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <input
@@ -74,7 +70,7 @@ export default function Login() {
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
-                setError(""); // Clear error when user starts typing
+                setError("");
               }}
               placeholder="Email"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -88,7 +84,7 @@ export default function Login() {
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
-                setError(""); // Clear error when user starts typing
+                setError("");
               }}
               placeholder="Password"
               className="w-full p-3 bg-gray-800 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -126,7 +122,6 @@ export default function Login() {
           </button>
         </form>
 
-        {/* Footer links */}
         <div className="mt-6 text-center text-sm text-gray-400">
           <Link to="/register" className="text-blue-400 hover:text-blue-300">
             Create account

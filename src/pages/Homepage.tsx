@@ -19,7 +19,6 @@ function Homepage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <section className="relative h-screen overflow-hidden -mt-[1px]">
-        {/* Video Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 w-[177.77vh] h-[56.25vw] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2">
             <iframe
@@ -33,7 +32,6 @@ function Homepage() {
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
-        {/* Mobile Content */}
         <div className="md:hidden relative z-10 h-full flex flex-col items-center justify-center px-4 text-center">
           {user ? (
             <div className="bg-gray-800/90 p-6 rounded-lg border border-gray-700 backdrop-blur-sm w-full max-w-md">
@@ -60,7 +58,7 @@ function Homepage() {
                   Discover the top 30 players of the season
                 </p>
               </div>
-              {/* Sign-in Card */}
+
               <div className="bg-gray-800/90 p-6 rounded-lg border border-gray-700 backdrop-blur-sm w-full max-w-md">
                 <h2 className="text-xl font-bold mb-4 text-white">
                   Unlock the Best Players
@@ -88,7 +86,6 @@ function Homepage() {
           )}
         </div>
 
-        {/* Desktop Content */}
         <div className="hidden md:flex relative z-10 h-full flex-col items-center justify-center pb-0">
           <div className="text-center px-4 w-full max-w-2xl">
             {user ? (
@@ -141,28 +138,8 @@ function Homepage() {
             )}
           </div>
         </div>
-
-        {/* Scroll indicator  //// maybe delete */}
-        {/* {!user && (
-          <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg
-              className="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
-        )} */}
       </section>
 
-      {/* About Section */}
       <section className="py-12 md:py-20 px-4 max-w-6xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">
           About FIFA 17 Ultimate Team
@@ -197,7 +174,6 @@ function Homepage() {
         </div>
       </section>
 
-      {/* Back to Top Button */}
       <div className="flex justify-center pb-8 md:pb-12">
         <ToTopBtn onClick={scrollToTop} />
       </div>

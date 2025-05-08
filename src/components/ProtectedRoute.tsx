@@ -10,7 +10,6 @@ function ProtectedRoute({ children }: ProtectedRouteProps) {
   const { user } = useContext(AuthContext);
   const location = useLocation();
 
-  // If user is logging out
   if (location.state?.fromLogout) {
     return <Navigate to="/" replace />;
   }

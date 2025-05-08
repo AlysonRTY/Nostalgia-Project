@@ -21,7 +21,7 @@ import { LoadingSpinner } from "../components/LoadingSpinner";
 // 4 define type for the context
 type AuthContextType = {
   user: User | null;
-  userData: any; // userData to store additional user info
+  userData: any;
   login: (email: string, password: string) => Promise<boolean>;
   register: (
     email: string,
@@ -128,7 +128,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   const logout = async () => {
     try {
       await signOut(auth);
-      setUserData(null); // Clear user data on logout
+      setUserData(null);
     } catch (error) {
       console.error("Logout error:", error);
     }
@@ -138,7 +138,6 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        // Fetch additional user data from Firestore
         const userDoc = await getDoc(doc(db, "users", user.uid));
         if (userDoc.exists()) {
           setUserData(userDoc.data());
@@ -149,7 +148,7 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
       setUser(user);
       setLoading(false);
     });
-    return unsubscribe; // Cleanup
+    return unsubscribe;
   }, []);
 
   if (loading) return <LoadingSpinner />;

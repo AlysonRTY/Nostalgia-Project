@@ -15,7 +15,6 @@ function PlayerList({
   useEffect(() => {
     const playerId = location.state?.scrollToPlayerId;
     if (playerId) {
-      // Add a small delay to ensure the DOM is fully rendered
       const timer = setTimeout(() => {
         const element = playerRefs.current[playerId];
         if (element) {
@@ -23,7 +22,6 @@ function PlayerList({
             behavior: "auto",
             block: "center",
           });
-          // Add additional offset if needed
           window.scrollBy(0, -50);
         }
       }, 100);
@@ -48,41 +46,51 @@ function PlayerList({
               to={`/player-details/${player.name}`}
               state={{
                 scrollToPlayerId: player.id,
-                preserveScroll: true,
+                preserveScroll: false,
               }}
               className="block"
             >
-              <div className="flex flex-col md:flex-row items-center bg-white p-8 rounded-lg shadow-md mb-8 relative overflow-hidden">
-                <div className="absolute inset-0 z-0 bg-gradient-to-r from-zinc-800 via-yellow-300 to-zinc-800 opacity-10"></div>
+              <div className="flex flex-col md:flex-row items-center bg-gray-800 p-6 rounded-xl shadow-2xl mb-6 relative overflow-hidden border border-gray-700 hover:border-blue-500 transition-colors">
+                <div className="absolute inset-0 z-0 bg-gradient-to-r from-blue-900/20 via-blue-700/10 to-blue-900/20"></div>
 
-                <div className="w-full md:w-1/2 lg:w-1/3 mb-6 md:mb-0 flex justify-center relative">
+                {/* Rank Badge */}
+                <div className="absolute top-4 left-4 bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full z-10">
+                  #{rank}
+                </div>
+
+                <div className="w-full md:w-1/3 mb-6 md:mb-0 flex justify-center relative">
                   <img
                     src={player.image}
                     alt={player.name}
-                    className="w-full max-w-xs object-contain rounded-lg h-64 md:h-80"
+                    className="w-full max-w-xs object-contain rounded-lg h-48 md:h-56"
                   />
                 </div>
 
-                <div className="w-full md:w-1/2 lg:w-2/3 md:pl-8 relative z-10">
-                  <h2 className="text-3xl font-bold mb-4">{player.name}</h2>
-                  <p className="text-gray-700 mb-6">{player.desc}</p>
+                <div className="w-full md:w-2/3 md:pl-6 relative z-10">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <h2 className="text-2xl font-bold text-white mb-2 md:mb-0">
+                      {player.name}
+                    </h2>
+                  </div>
 
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <span className="text-sm text-gray-500">Rank</span>
-                      <p className="text-lg font-semibold">#{rank}</p>
+                  <p className="text-gray-400 mb-6">{player.desc}</p>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-gray-700/50 p-3 rounded-lg">
+                      <span className="text-xs text-gray-400 block mb-1">
+                        Club
+                      </span>
+                      <p className="text-lg font-semibold text-white">
+                        {player.club}
+                      </p>
                     </div>
-                    <div>
-                      <span className="text-sm text-gray-500">Position</span>
-                      <p className="text-lg font-semibold">{player.position}</p>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500">Club</span>
-                      <p className="text-lg font-semibold">{player.club}</p>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500">Nation</span>
-                      <p className="text-lg font-semibold">{player.nation}</p>
+                    <div className="bg-gray-700/50 p-3 rounded-lg">
+                      <span className="text-xs text-gray-400 block mb-1">
+                        Nation
+                      </span>
+                      <p className="text-lg font-semibold text-white">
+                        {player.nation}
+                      </p>
                     </div>
                   </div>
                 </div>

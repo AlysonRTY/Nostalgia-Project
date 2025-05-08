@@ -1,6 +1,3 @@
-
-
-// for players.json
 export interface PlayerT {
   name: string;
   image: string;
@@ -10,17 +7,15 @@ export interface PlayerT {
   nation: string;
   position: string;
   rank: number;
+  rating: number;
 }
 
 export type PlayersT = PlayerT[];
 
-// ----------------------------------------
-// for details.json
-
-
 export interface PlayerD {
   id: number;
   name: string;
+  rating: string;
   position: string;
   image: string;
   weak_foot: number;
@@ -30,6 +25,8 @@ export interface PlayerD {
   weight: number;
   work_rate: string;
   stats: Stats;
+  club: string;
+  nation: string;
 }
 
 interface Stats {
@@ -51,21 +48,17 @@ export type PlayersD = PlayerD[];
 
 export type PlayerListDProps = {
   players: PlayersD;
-}
+};
 
-
-
-
- export type PlayerListProps = {
+export type PlayerListProps = {
   players: PlayersT;
   start: number;
   end: number;
   isTop3?: boolean;
- }
-
+};
 
 export type Comment = {
- id: string;
+  id: string;
   text: string;
   author: string;
   date: string;

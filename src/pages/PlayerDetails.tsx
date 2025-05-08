@@ -25,14 +25,14 @@ function PlayerDetails() {
   }, []);
 
   if (loading) {
-    return <LoadingSpinner />;
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
-  return (
-    <div className="bg-gray-100 min-h-screen">
-      <PlayerListD players={playersD} />
-    </div>
-  );
+  return <PlayerListD players={playersD} />;
 }
 
 export default PlayerDetails;
