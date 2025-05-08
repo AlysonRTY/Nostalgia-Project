@@ -21,10 +21,10 @@ export default function ErrorPage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">
-      {/* Main Content */}
+      
       <div className="flex-grow flex items-center justify-center p-4">
         <div className="w-full max-w-2xl bg-gray-800/90 rounded-xl border border-gray-700 backdrop-blur-sm overflow-hidden shadow-2xl">
-          {/* Header */}
+ 
           <div className="relative bg-gradient-to-r from-red-900/70 to-red-800/70 p-6">
             <div className="absolute top-4 right-4 w-12 h-12 border-4 border-white rounded-full flex items-center justify-center">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
@@ -37,10 +37,8 @@ export default function ErrorPage() {
             </p>
           </div>
 
-          {/* Main Content Area */}
           <div className="p-6 md:p-8">
             <div className="flex flex-col md:flex-row items-center gap-6">
-              {/* Error Graphic */}
               <div className="hidden md:flex flex-col items-center justify-center w-1/3">
                 <div className="relative w-32 h-32">
                   <div className="absolute inset-0 bg-red-600/20 rounded-full animate-pulse"></div>
@@ -63,8 +61,6 @@ export default function ErrorPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Text Content */}
               <div className="md:w-2/3">
                 <h2 className="text-xl font-semibold mb-4">
                   Oops! Something went wrong
