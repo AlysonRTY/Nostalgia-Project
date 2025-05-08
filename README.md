@@ -6,7 +6,29 @@ Relive the glory days of FIFA 17 with this interactive player database featuring
 
 ### Home Page
 
-![Home page](images/homepage1.png)
+![Homepage](images/homepage1.png)
+![Homepage](images/homepage2.png)
+![Homepage](images/homepagefooter.png)
+
+### Login / Register
+
+![Login page](images/login.png)
+![Register page](images/register.png)
+
+### Playerlist / Details
+
+![Playerlist page](images/bestplayers.png)
+![Details page](images/playerdetails.png)
+![Comments](images/comments.png)
+
+### Player Comparison
+
+![Comparison page](images/comparison1.png)
+![Comparison page](images/comparison2.png)
+![Comparison page](images/comparison3.png)
+![Comparison page](images/comparison4.png)
+![Comparison page](images/comparison5.png)
+![Comparison page](images/comparison6.png)
 
 ## Features
 
