@@ -30,6 +30,10 @@ Relive the glory days of FIFA 17 with this interactive player database featuring
 ![Comparison page](images/comparison5.png)
 ![Comparison page](images/comparison6.png)
 
+## Live Demo
+
+[Visit the live website](https://whimsical-gumdrop-66f887.netlify.app/) to experience the full interactive database.
+
 ## Features
 
 ### Player Profiles
